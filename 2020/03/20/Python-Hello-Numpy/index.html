@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | LuenSing</title>
+  <title>Python Hello Numby | LuenSing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LuenSing">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="第一课 - 数据科学之 Numpy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Hello Numby">
+<meta property="og:url" content="http://yoursite.com/2020/03/20/Python-Hello-Numpy/index.html">
 <meta property="og:site_name" content="LuenSing">
+<meta property="og:description" content="第一课 - 数据科学之 Numpy">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-20T15:23:30.000Z">
+<meta property="article:modified_time" content="2020-03-20T16:04:43.983Z">
 <meta property="article:author" content="小钟研究所">
 <meta name="twitter:card" content="summary">
   
@@ -160,106 +164,241 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Python-Hello-Numpy" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Python Hello Numby
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
 <a href="/2020/03/20/Python-Hello-Numpy/" class="archive-article-date">
   	<time datetime="2020-03-20T15:23:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/20/Python-Hello-Numpy/">Python Hello Numby</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第一课-数据科学之-Numpy"><a href="#第一课-数据科学之-Numpy" class="headerlink" title="第一课 - 数据科学之 Numpy"></a>第一课 - 数据科学之 Numpy</h1> <a id="more"></a>
+<p>本课内容：</p>
+<ol start="0">
+<li>导入 NumPy 包</li>
+<li>创建 NumPy 数组</li>
+<li>索引和切片</li>
+<li>读取文件</li>
+<li>布尔型索引</li>
+<li>数组的运算</li>
+<li>常用函数举例<br></li>
+</ol>
+<ul>
+<li>NumPy 是 Numerical Python 的简称，是 Python 科学计算的核心包。其强大的科学计算能力在很多高级包中得到应用。比如，在后续课程中的 pandas 就是基于 NumPy 的一种工具包。numpy主要特点<br>使用向量化操作以简化数据处理，包括取子集，过滤，和变形等等。<br>高效的数据总结，排序功能。</li>
+</ul>
+<h2 id="0-导入-NumPy-包"><a href="#0-导入-NumPy-包" class="headerlink" title="0. 导入 NumPy 包"></a>0. 导入 NumPy 包</h2><ol>
+<li><p>import numpy as np  # 将之简写为 np</p>
+</li>
+<li><p>创建 NumPy 数组</p>
+</li>
+</ol>
+<ul>
+<li><p>numpy的一个重要对象(object)是 ndarray， 也称 NumPy 数组</p>
+</li>
+<li><p>ndarray 是 Multidimensional Array的缩写，中文称为多(multi)维(dimensional)数组(array)。<br>数组可以存储大量数据并在其进行数学运算，我们可以使用数组在一块数据上进行操作从而避免使用循环来操作单个元素。</p>
+<h3 id="1-1-一维数组"><a href="#1-1-一维数组" class="headerlink" title="1-1. 一维数组"></a>1-1. 一维数组</h3><p>从列表中创建数组，使用np.array函数创建<br></p>
+</li>
+<li><p>value = [1,2,3]<br> arr1d = np.array(value)<br>arr1d</p>
+</li>
+<li><p>查看数据类型<br>type(arr1d)</p>
+</li>
+<li><p>查看维度，返回1，说明是一维数组<br>arr1d.ndim</p>
+<h3 id="1-2-二维数组"><a href="#1-2-二维数组" class="headerlink" title="1-2. 二维数组"></a>1-2. 二维数组</h3><p>从二维列表中创建二维数组</p>
+</li>
+<li><p>value = [[1,2,3],[4,5,6]]<br>arr2d = np.array(value)<br>arr2d</p>
+</li>
+<li><p>二维数组就类似一个矩阵<br>0轴 (axis=0) 是列，也就是垂直方向<br>1轴 (axis=1) 是行，也就是水平方向<br>矩阵对于数据分析来说，是一个重要的概念，一般用列来代表观测对象的各种属性、特征，用行来记录每一个观测对象的一组测量数据。</p>
+<h3 id="1-3-其他快速创建数组的函数"><a href="#1-3-其他快速创建数组的函数" class="headerlink" title="1-3. 其他快速创建数组的函数"></a>1-3. 其他快速创建数组的函数</h3><h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4></li>
+<li><p>np.zeros(5)<br>创建全0数组</p>
+</li>
+<li><p>np.empty(10)<br>创建空数组，其元素的值不一定为0，它返回的是一些未初始化的垃圾值。</p>
+</li>
+<li><p>np.ones(5)<br>创建元素都为1的数组</p>
+</li>
+<li><p>np.arange(10)<br><br>np.arange 类似于Python中的range函数，是它是数组版<br><br>数组元素从0 到 9<br></p>
+</li>
+<li><p>np.arange(2, 10, 2)<br><br>10以内的偶数构成数组<br><br>arange() 中的参数分别是：起始值，终值（不被包含），步长（类似等差数列）<br></p>
+</li>
+<li><p>np.random.rand(5)<br>创建 [0, 1) 之间的随机数</p>
+</li>
+<li><p>np.random.randint(1, 10, size=8)<br>创建指定范围内的随机整数</p>
+<br>
+<br>
+#### 二维数组</li>
+<li><p>np.zeros((2,3))<br>返回得到—&gt;array([[ 0,  0,  0],[ 0,  0,  0]])</p>
+<br>
+<br>
+#### 读取文件<br></li>
+<li><p>a = np.genfromtxt(文件名.csv’, delimiter=’;’, skip_header=1)<br></p>
+</li>
+</ul>
+<p>—&gt;读取红酒品质数据，原数据以分号进行分隔，并且跳过第一行<br>数据文件中第一行是字段名，属于字符串类型，而numpy数组的所有元素必须是一致的数据类型，故需要跳过第一行，否则会出错。&lt;—<br><BR><br><br></p>
+<h4 id="布尔型索引"><a href="#布尔型索引" class="headerlink" title="布尔型索引"></a>布尔型索引<br></h4><ul>
+<li>之前的切片索引方法是通过指定行或列的位置来取一个数组的一部分</li>
+<li>顾名思义，布尔索引是通过一个布尔型数组来确定所需要的行或者列的位置</li>
+<li>当行或列位置对应的布尔索引为True的时候，我们会保留这个行或列。反之，当对应的布尔索引为False的时候，则不选取。</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/20/Python-Hello-Numpy/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/19/I-AM-ME/" class="archive-article-date">
-  	<time datetime="2020-03-19T04:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/19/I-AM-ME/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">The First Blog | Croods</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/19/I-AM-ME/">The First Blog | Croods</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一课-数据科学之-Numpy"><span class="toc-number">1.</span> <span class="toc-text">第一课 - 数据科学之 Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-导入-NumPy-包"><span class="toc-number">1.1.</span> <span class="toc-text">0. 导入 NumPy 包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-一维数组"><span class="toc-number">1.1.1.</span> <span class="toc-text">1-1. 一维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-二维数组"><span class="toc-number">1.1.2.</span> <span class="toc-text">1-2. 二维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-其他快速创建数组的函数"><span class="toc-number">1.1.3.</span> <span class="toc-text">1-3. 其他快速创建数组的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一维数组"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">一维数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#布尔型索引"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">布尔型索引
+</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/19/ANTELOPE-CANYON-BLOG/" class="archive-article-date">
-  	<time datetime="2020-03-19T01:57:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/19/ANTELOPE-CANYON-BLOG/">ANTELOPE CANYON BLOG</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -293,8 +432,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
